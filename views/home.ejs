@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    <!-- BOOTSTRAP CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" >Online Class</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/subject">Subjects</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/aboutus">About us</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" >Schedule</a>
+      </li>
+    </ul>
+    <div> 
+      <form class="form-inline float-right"> 
+        <a href="/logout"  class="btn btn-danger float-right">Logout</a>
+      
+    </form>
+</div>
+  </nav>
+<body>  
+  
+  <div class="w3-sidebar w3-red w3-bar-block"  style="width:25%" style="position: absolute;">
+    <h3 class="w3-bar-item">Subjects</h3>
+    <a href="/result" class="w3-bar-item w3-button" id="BENGALI">BENGALI</a>
+    <a href="/result" name="subject" class="w3-bar-item w3-button" id="English">ENGLISH</a>
+    <a href="/result"  class="w3-bar-item w3-button" id="Math">MATH</a>
+    <a href= "/result" name="subject"  class="w3-bar-item w3-button" id="Science" >SCIENCE</a>
+
+  </div>
+  <div style="margin-left:25%">  
+    <div class="w3-container">
+      <div class="container p-3">
+      <div class="card">
+        <div class="card-body">
+                <h1>Hello, <%= name %> , class:<%= claas %>  </h1>           
+        </div>
+      </div>
+    </div>
+<div class="w3-container w3-padding-18" id="Subjects">
+  <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Subjects</h3>
+</div>
+
+<div class="w3-row-padding">
+  <div class="w3-third w3-container w3-margin-bottom w3-magin-left">
+    <img src="/images/img2.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+    <div class="w3-container w3-white">
+      <p><b>SCIENCE</b></p>
+      
+    </div>
+  </div>
+  <div class="w3-third w3-container">
+    <img src="/images/img1.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+    <div class="w3-container w3-white">
+      <p><b>MATH</b></p>
+      
+    </div>
+    
+</div>
+  </div>
+  <div class="w3-third w3-container">
+    <img src="/images/img1.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+    <div class="w3-container w3-white">
+      <p><b>MATH</b></p>
+      
+    </div>
+</div>
+</div>
+</div>
+   
+</div>
+<script>
+  var abcdef;
+
+  $('#Bengali').click(function(){
+    abcdef=$('#Bengali').get(0).id;
+ 
+    $.ajax({
+     type:'get',
+     url:'/result',
+     data:abcdef,
+   
+
+     success:function(data) {
+ 
+      console.log(abcdef);
+     }
+    
+   });
+
+  console.log(a);
+  });
+  $('#English').click(function(){
+    abcdef=$('#English').get(0).id;
+   $.ajax({
+     type:'get',
+     url:'/result',
+     data:abcdef,
+
+     success:function(data) {
+ 
+      console.log(abcdef);
+     }
+
+   });
+
+  
+  });
+  $('#Math').click(function(){
+    abcdef=$('#Math').get(0).id;
+   $.ajax({
+     type:'get',
+     url:'/result',
+     data:abcdef,
+
+     dataType:'html',
+     success:function(data) {
+ 
+      console.log(abcdef);
+     }
+
+   });
+
+  
+  });
+
+   $('#Science').click(function(){
+    abcdef=$('#Science').get(0).id;
+    
+   $.ajax({
+     type:'get',
+     url:'/result',
+     data:abcdef,
+     success:function(data) {
+ 
+      console.log(abcdef);
+     }
+
+   });
+  });
+</script>
+  
+   </body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Result</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   
+    <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+    <script src="/js/pdfobject.js"></script>
+</head>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" >Online Class</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/subject">Subjects</a>
+      </li>
+      <li class="nav-item active">
+        
+          
+      </li>  
+
+
+    <div> 
+      <form class="form-inline float-right"> 
+        <a href="/logout"  class="btn btn-danger float-right">Logout</a>
+      
+    </form>
+    </div>
+  </nav>
+<body>  
+    <div class="w3-container">
+        <div class="container p-3">
+        <div class="card">
+          <div class="card-body">    
+      <%= value.period %>
+      <%= value.teacher_name %>
+            <lable class="mdb-main-label">Date</lable> 
+            <select class="mdb-select md-form colorful-select dropdown-danger">
+                    <option value="1"><%=JSON.stringify(value.teacher_name)%></option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                    <option value="4">Option 4</option>
+                    <option value="5">Option 5</option>
+            </select>
+            <lable class="mdb-main-label"> Teacher Name</lable>
+            <input type="text" class="mdb-main-label" id="usr1" value=''>
+            <lable class="mdb-main-label"> Period </lable>
+            <input type="text" class="mdb-main-label" id="usr2" value= ''> 
+          </div>
+          <div>
+            <form class="form-inline float-right"> 
+              <button >Study Material</button>
+            
+          </form>
+          
+          </div>
+         
+        </div>
+        <%=JSON.stringify(value)%>
+      </div>
+    </div>
+    <div>
+        <canvas id="my_canvas"></canvas>
+ 
+      </div>  
+      
+<script>
+   // var viewer = $('my_canvas');
+    //PDFobject.embed('test.pdf',viewer);
+</script>
+<table id="customers">
+  <thead>
+    <tr>
+     
+      <th>sec</th>
+      <th>Teacher Name</th>
+      <th>Class Date</th>
+      <th>Study Metarial</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% for(var i=0; i < value.length; i++) { %>
+    <tr>
+      
+      <td><%= value[i].period %></td>
+
+      <td><%= value[i].teacher_name %></td>
+      <td><%= value[i].date %></td>
+      <td><%= value[i].query %></td>
+    </tr>
+    <% } %>
+  </tbody>
+</table>
+    </body>
+    </html>
